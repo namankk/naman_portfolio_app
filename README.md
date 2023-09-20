@@ -1,6 +1,6 @@
 # naman_portfolio_app
 
-"A Portfolio App made in Flutter"
+A Portfolio App made in Flutter for Adnroid/IOS/Mac/Web
 
 ## Getting Started
 
