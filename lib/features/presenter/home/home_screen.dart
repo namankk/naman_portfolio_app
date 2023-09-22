@@ -17,12 +17,13 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const NavBarWidget(),
             IntroWidget(size: size),
             RecentCompanyWidget(
               title: "Previous Company",
               listItem: Container(
-                margin: EdgeInsets.all(10.0),
-                padding: EdgeInsets.all(10.0),
+                margin: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 color: Colors.white,
                 child: Column(
                   children: [
@@ -43,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                               )),
                           Container(
                             color: lightColor,
-                            margin: EdgeInsets.symmetric(horizontal: 5.0),
+                            margin: const EdgeInsets.symmetric(horizontal: 5.0),
                             width: 3,
                             height: 20,
                           ),
@@ -56,9 +57,9 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0),
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
                       child: Text(
-                          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
+                          "I'm passionate about building high-quality, user-friendly mobile apps. I have a deep understanding of the Flutter framework and its capabilities, and I'm always looking for new ways to use it to create innovative and engaging apps.",
                           style: GoogleFonts.heebo(
                             color: darkColor,
                             fontSize: 16,
@@ -127,47 +128,454 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              color: Colors.white,
-              padding: EdgeInsets.all(80),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset("assets/icons/github.svg",
-                          height: 30, width: 30),
-                      SizedBox(
-                        width: 30.0,
-                      ),
-                      SvgPicture.asset("assets/icons/linkedin.svg",
-                          height: 30, width: 30),
-                      SizedBox(
-                        width: 30.0,
-                      ),
-                      SvgPicture.asset("assets/icons/stack.svg",
-                          height: 30, width: 30),
-                      SizedBox(
-                        width: 30.0,
-                      ),
-                      SvgPicture.asset("assets/icons/gmail.svg",
-                          height: 30, width: 30),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 15.0,
-                  ),
-                  Text('Copyright ©2020 All rights reserved ',
-                      style: GoogleFonts.heebo(
-                        color: darkColor,
-                        fontSize: 14,
-                      )),
-                ],
-              ),
-            )
+            const FooterWidget()
           ],
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
+      drawer: Drawer(
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Column(
+                children: [
+                  Container(
+                    height: 150,
+                    width: 150,
+                    margin: EdgeInsets.only(top: 60.0, bottom: 20),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+
+                    ),
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset(
+                          'assets/images/drawer_pic.jpeg',
+                          fit: BoxFit.fitHeight,
+                        )),
+                  ),
+                  Text('Naman Kashyap',
+                      style: GoogleFonts.heebo(
+                          color: darkColor,
+                          fontWeight: FontWeight.w800,
+                          height: 0,
+                          fontSize: 22)),
+                  const SizedBox(
+                    height: defaultPadding / 4,
+                  ),
+                  Text('Senior Flutter Developer',
+                      style: GoogleFonts.heebo(
+                          color: darkColor,
+                          fontWeight: FontWeight.w500,
+                          height: 0,
+                          fontSize: 19)),
+                  RichText(
+                    text: TextSpan(
+                        text: "5+",
+                        style: GoogleFonts.heebo(
+                            fontWeight: FontWeight.w900,
+                            height: 0,
+                            color: primaryColor,
+                            fontSize: 19),
+                        children: [
+                          TextSpan(
+                              text: " Year Experience",
+                              style: GoogleFonts.heebo(
+                                  color: darkColor,
+                                  fontWeight: FontWeight.w500,
+                                  height: 0,
+                                  fontSize: 19))
+                        ]),
+                  ),
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.0),
+                child: Divider(color: Colors.grey),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, top: 20, bottom: 10),
+                child: Text(
+                  "Contact Info",
+                  style: GoogleFonts.heebo(
+                      fontWeight: FontWeight.w700,
+                      color: darkColor,
+                      height: 0,
+                      fontSize: 18),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 15, right: 15, bottom: 5),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Email :",
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.w700),
+                    ),
+                    Text(
+                      "naman.kashyap12@gmail.com",
+                      style: TextStyle(color: Colors.black),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 15, right: 15, bottom: 5),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Phone No :",
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.w700),
+                    ),
+                    Text(
+                      "8791411463",
+                      style: TextStyle(color: Colors.black),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 15, right: 15),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Location :",
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.w700),
+                    ),
+                    Text(
+                      "India",
+                      style: TextStyle(color: Colors.black),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, top: 30),
+                child: Text(
+                  "Skills",
+                  style: GoogleFonts.heebo(
+                      fontWeight: FontWeight.w700,
+                      color: darkColor,
+                      height: 0,
+                      fontSize: 18),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, top: 10.0),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      "assets/icons/flutter.svg",
+                      height: 15,
+                      width: 15,
+                      fit: BoxFit.cover,
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    const Text(
+                      "Flutter",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    SvgPicture.asset(
+                      "assets/icons/dart.svg",
+                      height: 15,
+                      width: 15,
+                      fit: BoxFit.cover,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5, right: 15),
+                      child: Text(
+                        "Dart",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, top: 5.0),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      "assets/icons/android.svg",
+                      height: 15,
+                      width: 15,
+                      fit: BoxFit.cover,
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      "Android",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    SvgPicture.asset(
+                      "assets/icons/ios.svg",
+                      height: 15,
+                      width: 15,
+                      fit: BoxFit.cover,
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5, right: 15),
+                      child: Text(
+                        "Ios",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, top: 5.0),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      "assets/icons/flutter.svg",
+                      height: 15,
+                      width: 15,
+                      fit: BoxFit.cover,
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      "Bloc",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    SvgPicture.asset(
+                      "assets/icons/dart.svg",
+                      height: 15,
+                      width: 15,
+                      fit: BoxFit.cover,
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5, right: 15),
+                      child: Text(
+                        "Sqflite",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, top: 5.0),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      "assets/icons/flutter.svg",
+                      height: 15,
+                      width: 15,
+                      fit: BoxFit.cover,
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      "GetX",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    SvgPicture.asset(
+                      "assets/icons/java.svg",
+                      height: 15,
+                      width: 15,
+                      fit: BoxFit.cover,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5, right: 15),
+                      child: Text(
+                        "Java",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, top: 5.0),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      "assets/icons/firebase.svg",
+                      height: 15,
+                      width: 15,
+                      fit: BoxFit.cover,
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      "Firebase",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    SvgPicture.asset(
+                      "assets/icons/git.svg",
+                      height: 15,
+                      width: 15,
+                      fit: BoxFit.cover,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5, right: 15),
+                      child: Text(
+                        "Git",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, top: 5.0),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      "assets/icons/postman.svg",
+                      height: 15,
+                      width: 15,
+                      fit: BoxFit.cover,
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      "Postman",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    SvgPicture.asset(
+                      "assets/icons/flutter.svg",
+                      height: 15,
+                      width: 15,
+                      fit: BoxFit.cover,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5, right: 15),
+                      child: Text(
+                        "Get It",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 25),
+                child: Divider(color: Colors.grey),
+              ),
+              const Spacer(),
+              const ConnectWithMeWidget(),
+              const Spacer(flex: 3),
+            ],
+          ),
+        ),
+      ),
+      // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class NavBarWidget extends StatelessWidget {
+  const NavBarWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          height: MediaQuery.sizeOf(context).width / 3,
+          color: Colors.white,
+          width: MediaQuery.sizeOf(context).width,
+        ),
+        Positioned(
+          top: 40,
+          left: 10,
+          child: IconButton(
+            icon: Icon(
+              Icons.menu,
+              size: 30,
+              color: darkColor,
+            ),
+            onPressed: () {
+              print("object");
+              Scaffold.of(context).openDrawer();
+            },
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class FooterWidget extends StatelessWidget {
+  const FooterWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      padding: EdgeInsets.all(80),
+      child: const Column(
+        children: [
+          ConnectWithMeWidget(),
+          SizedBox(
+            height: 15.0,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ConnectWithMeWidget extends StatelessWidget {
+  const ConnectWithMeWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SvgPicture.asset("assets/icons/github.svg", height: 30, width: 30),
+        SizedBox(
+          width: 30.0,
+        ),
+        SvgPicture.asset("assets/icons/linkedin.svg", height: 30, width: 30),
+        SizedBox(
+          width: 30.0,
+        ),
+        SvgPicture.asset("assets/icons/stack.svg", height: 30, width: 30),
+        SizedBox(
+          width: 30.0,
+        ),
+        SvgPicture.asset("assets/icons/gmail.svg", height: 30, width: 30),
+      ],
     );
   }
 }
@@ -222,13 +630,10 @@ class IntroWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          SizedBox(
-            height: size.width / 4,
-          ),
           ImageWidget(),
           Padding(
             padding: const EdgeInsets.only(top: 40),
-            child: Text('Hi, I am John,\nSenior Flutter Dev',
+            child: Text('Hi, I am Naman,\nSenior Flutter Dev',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.heebo(
                     color: darkColor,
@@ -239,7 +644,7 @@ class IntroWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-                'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
+                "I'm passionate about building high-quality, user-friendly mobile apps. I have a deep understanding of the Flutter framework and its capabilities, and I'm always looking for new ways to use it to create innovative and engaging apps.",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.heebo(
                   color: darkColor,
