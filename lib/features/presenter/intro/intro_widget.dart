@@ -9,10 +9,8 @@ import '../../../core/responsive.dart';
 class IntroWidget extends StatelessWidget {
   const IntroWidget({
     super.key,
-    required this.size,
   });
 
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +82,7 @@ class IntroWidget extends StatelessWidget {
               child: ElevatedButton(
                 style: TextButton.styleFrom(
                     backgroundColor: primaryColor,
-                    padding: EdgeInsets.all(24),
+                    padding: const EdgeInsets.all(24),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0))
                 ),
                 onPressed: () => launchUrl(Uri.parse(
@@ -183,7 +181,7 @@ class IntroWidget extends StatelessWidget {
                      child: ElevatedButton(
                        style: TextButton.styleFrom(
                          backgroundColor: primaryColor,
-                         padding: EdgeInsets.all(24),
+                         padding: const EdgeInsets.all(24),
                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0))
                        ),
                        onPressed: () => launchUrl(Uri.parse(
@@ -219,7 +217,7 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 380,
       width: 380,
       child: Stack(
@@ -240,14 +238,14 @@ class ImageWidget extends StatelessWidget {
                     height: 290,
                     width: 1,
                     color: Colors.black,
-                    margin: EdgeInsets.only(left: 8.0),
+                    margin: const EdgeInsets.only(left: 8.0),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     height: 290,
                     width: 1,
                     color: Colors.black,
-                    margin: EdgeInsets.only(right: 8.0),
+                    margin: const EdgeInsets.only(right: 8.0),
 
                   ),
                 ],

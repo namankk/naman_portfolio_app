@@ -11,9 +11,8 @@ class NavBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
+        SizedBox(
           height: 100,
-          // color: Colors.white,
           width: MediaQuery.sizeOf(context).width,
         ),
         Positioned(
