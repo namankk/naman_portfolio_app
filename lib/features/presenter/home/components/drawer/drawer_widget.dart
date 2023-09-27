@@ -24,9 +24,7 @@ class DrawerWidget extends StatelessWidget {
               decoration: const BoxDecoration(
                   color: primaryColor, borderRadius: BorderRadius.only()),
               padding: const EdgeInsets.all(10.0),
-              child: SvgPicture.asset("assets/icons/logo.svg",
-                  colorFilter:
-                      const ColorFilter.mode(Colors.white, BlendMode.color)),
+              child: SvgPicture.asset("assets/icons/logo.svg"),
             ),
             Column(
               children: [

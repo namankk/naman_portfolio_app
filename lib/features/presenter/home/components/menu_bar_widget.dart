@@ -56,9 +56,7 @@ class MenuBarWidget extends StatelessWidget {
           const Spacer(
             flex: 1,
           ),
-          SvgPicture.asset("assets/icons/logo.svg",
-              colorFilter:
-                  const ColorFilter.mode(primaryColor, BlendMode.color)),
+          SvgPicture.asset("assets/icons/logo.svg"),
           Padding(
             padding: const EdgeInsets.only(right: 8.0, left: 8.0),
             child: ResponsiveText('Naman',
