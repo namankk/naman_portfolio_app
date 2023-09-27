@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../../core/constants.dart';
+import '../../../../../core/responsive.dart';
 import '../../../connect_with_me/connect_with_me.dart';
 
 class DrawerWidget extends StatelessWidget {
@@ -20,25 +21,29 @@ class DrawerWidget extends StatelessWidget {
             Column(
               children: [
                 Container(
-                  height: 150,
-                  width: 150,
-                  margin: const EdgeInsets.only(top: 60.0, bottom: 20),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+                    margin: const EdgeInsets.only(top: 60.0, bottom: 20),
+
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ResponsiveText('Naman',
+                          textAlign: TextAlign.start,
+                          style: GoogleFonts.heebo(
+                              color: darkColor,
+                              fontWeight: FontWeight.w700,
+                              height: 0,
+                              fontSize: 22)),
+                      ResponsiveText(' Kashyap',
+                          textAlign: TextAlign.start,
+                          style: GoogleFonts.heebo(
+                              color: primaryColor,
+                              fontWeight: FontWeight.w700,
+                              height: 0,
+                              fontSize: 22)),
+                    ],
                   ),
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Image.asset(
-                        'assets/images/drawer_pic.jpeg',
-                        fit: BoxFit.fitHeight,
-                      )),
                 ),
-                Text('Naman Kashyap',
-                    style: GoogleFonts.heebo(
-                        color: darkColor,
-                        fontWeight: FontWeight.w800,
-                        height: 0,
-                        fontSize: 22)),
+
                 const SizedBox(
                   height: defaultPadding / 4,
                 ),
@@ -68,6 +73,7 @@ class DrawerWidget extends StatelessWidget {
                 ),
               ],
             ),
+
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.0),
               child: Divider(color: Colors.grey),
