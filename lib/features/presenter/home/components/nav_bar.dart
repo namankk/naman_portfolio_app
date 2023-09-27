@@ -13,7 +13,7 @@ class NavBarWidget extends StatelessWidget {
       children: [
         Container(
           height: 100,
-          color: Colors.white,
+          // color: Colors.white,
           width: MediaQuery.sizeOf(context).width,
         ),
         Positioned(

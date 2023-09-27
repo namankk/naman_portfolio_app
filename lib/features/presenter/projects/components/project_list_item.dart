@@ -4,6 +4,7 @@ import 'package:naman_portfolio_app/features/data/model/MyProjectsModel.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../core/constants.dart';
+import '../../../../core/responsive.dart';
 
 class ProjectsListItem extends StatelessWidget {
   final MyProjectsModel myProjectsModel;
@@ -15,14 +16,13 @@ class ProjectsListItem extends StatelessWidget {
     final Size size = MediaQuery.sizeOf(context);
     return Container(
       padding: const EdgeInsets.all(10.0),
-      color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.network(myProjectsModel.projectImage),
+          AspectRatio(aspectRatio:2/1,child: Image.network(myProjectsModel.projectImage)),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Text(myProjectsModel.projectTitle,
+            child: ResponsiveText(myProjectsModel.projectTitle,
                 style: GoogleFonts.heebo(
                   color: darkColor,
                   fontWeight: FontWeight.bold,
@@ -31,9 +31,10 @@ class ProjectsListItem extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0),
-            child: Text(
-                myProjectsModel.projectDesc,maxLines: 4,
-                overflow: TextOverflow.ellipsis,
+            child: ResponsiveText(
+                myProjectsModel.projectDesc,
+                maxLine: 4,
+                // overflow: TextOverflow.ellipsis,
                 style: GoogleFonts.heebo(
                   color: darkColor,
                   fontSize: 16,
@@ -41,26 +42,16 @@ class ProjectsListItem extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Row(
-              children: [
-                Text('PlayStore Link -',
-                    style: GoogleFonts.heebo(
-                      color: darkColor,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16,
-                    )),
-                TextButton(
-                  onPressed: () {
-                    launchUrl(Uri.parse(myProjectsModel.projectLink));
-                  },
-                  child: Text("Go To Play Store",
-                      style: GoogleFonts.heebo(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                      )),
-                ),
-              ],
+            child: TextButton(
+              onPressed: () {
+                launchUrl(Uri.parse(myProjectsModel.projectLink));
+              },
+              child: ResponsiveText("Go To Play Store",
+                  style: GoogleFonts.heebo(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16,
+                  )),
             ),
           ),
           Container(
