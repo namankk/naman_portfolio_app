@@ -3,8 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:naman_portfolio_app/features/data/model/MyProjectsModel.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../core/constants.dart';
-import '../../../../core/responsive.dart';
+import '../../../../../core/constants.dart';
+import '../../../../../core/responsive.dart';
+
+
 
 class ProjectsListItem extends StatelessWidget {
   final MyProjectsModel myProjectsModel;
