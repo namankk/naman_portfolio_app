@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:naman_portfolio_app/features/presenter/screens/about_me/about_me.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../core/constants.dart';
 import '../../../../../core/responsive.dart';
 import '../../../../data/model/drawer_menu_model.dart';
+import '../../skills/skills_screen.dart';
 
 class MenuBarWidget extends StatelessWidget {
   const MenuBarWidget({super.key});
@@ -24,8 +24,9 @@ class MenuBarWidget extends StatelessWidget {
                         vertical: 15, horizontal: 22),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0))),
-                onPressed: () =>
-                    launchUrl(Uri.parse(drawerMenu.redirectionLink)),
+                onPressed: () =>Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const SkillsScreen())
+                    /*launchUrl(Uri.parse(drawerMenu.redirectionLink)*/),
                 child: ResponsiveText(drawerMenu.title,
                     style: GoogleFonts.inter(
                       fontSize: 16,

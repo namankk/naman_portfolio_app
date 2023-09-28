@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:naman_portfolio_app/core/responsive.dart';
@@ -6,21 +7,22 @@ import 'package:naman_portfolio_app/features/data/local_data/about_me_data.dart'
 import '../../../../core/constants.dart';
 import '../../common_widgets/common_widgets.dart';
 import '../home/components/menu_bar_widget.dart';
+import '../home/components/nav_bar.dart';
 
 class AboutMe extends StatelessWidget {
   const AboutMe({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
             WithBackgroundWidget(
               child: Column(
-                children: [
-                  MenuBarWidget(),
+                children: const [
+                  if (kIsWeb) MenuBarWidget() else NavBarWidget(),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 20.0),
                     child: HeadingWidget(firstWord: "About", secondWord: " Me"),
