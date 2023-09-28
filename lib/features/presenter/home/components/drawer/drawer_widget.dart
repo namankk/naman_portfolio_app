@@ -14,16 +14,23 @@ class DrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.white,
       child: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            Container(
+              height: 60,
+              width: 60,
+              decoration: const BoxDecoration(
+                  color: primaryColor, borderRadius: BorderRadius.only()),
+              padding: const EdgeInsets.all(10.0),
+              child: SvgPicture.asset("assets/icons/logo.svg"),
+            ),
             Column(
               children: [
                 Container(
-                    margin: const EdgeInsets.only(top: 60.0, bottom: 20),
-
-                child: Row(
+                  margin: const EdgeInsets.only(top: 60.0, bottom: 20),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ResponsiveText('Naman',
@@ -43,7 +50,6 @@ class DrawerWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-
                 const SizedBox(
                   height: defaultPadding / 4,
                 ),
@@ -73,7 +79,6 @@ class DrawerWidget extends StatelessWidget {
                 ),
               ],
             ),
-
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.0),
               child: Divider(color: Colors.grey),

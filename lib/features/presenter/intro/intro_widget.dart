@@ -9,98 +9,94 @@ import '../../../core/responsive.dart';
 class IntroWidget extends StatelessWidget {
   const IntroWidget({
     super.key,
-    required this.size,
   });
 
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
     return ResponsiveWiget(
-      mobile: Container(
-        color: Colors.white,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            const ImageWidget(),
-            Padding(
-              padding: const EdgeInsets.only(top: 40),
-              child: Column(
-                children: [
-                  Wrap(
-                    children: [
-                      ResponsiveText('Hi, I am',
-                          textAlign: TextAlign.start,
-                          style: GoogleFonts.heebo(
-                              color: darkColor,
-                              fontWeight: FontWeight.w900,
-                              height: 0,
-                              fontSize: 35)),
-                      ResponsiveText(' Naman',
-                          textAlign: TextAlign.start,
-                          style: GoogleFonts.heebo(
-                              color: primaryColor,
-                              fontWeight: FontWeight.w900,
-                              height: 0,
-                              fontSize: 35)),
-                    ],
-                  ),
-                  Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.start,
-                    children: [
-                      ResponsiveText('Senior Flutter ',
-                          textAlign: TextAlign.start,
-                          maxLine: 2,
-                          style: GoogleFonts.heebo(
-                              color: primaryColor,
-                              fontWeight: FontWeight.w900,
-                              height: 0,
-                              fontSize: 35)),
-                      ResponsiveText('Developer',
-                          textAlign: TextAlign.start,
-                          style: GoogleFonts.heebo(
-                              color: darkColor,
-                              fontWeight: FontWeight.w900,
-                              height: 0,
-                              fontSize: 35)),
-                    ],
-                  )
-                ],
-              ),
+      mobile: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          const ImageWidget(),
+          Padding(
+            padding: const EdgeInsets.only(top: 40),
+            child: Column(
+              children: [
+                Wrap(
+                  children: [
+                    ResponsiveText('Hi, I am',
+                        textAlign: TextAlign.start,
+                        style: GoogleFonts.heebo(
+                            color: darkColor,
+                            fontWeight: FontWeight.w900,
+                            height: 0,
+                            fontSize: 35)),
+                    ResponsiveText(' Naman',
+                        textAlign: TextAlign.start,
+                        style: GoogleFonts.heebo(
+                            color: primaryColor,
+                            fontWeight: FontWeight.w900,
+                            height: 0,
+                            fontSize: 35)),
+                  ],
+                ),
+                Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.start,
+                  children: [
+                    ResponsiveText('Senior Flutter ',
+                        textAlign: TextAlign.start,
+                        maxLine: 2,
+                        style: GoogleFonts.heebo(
+                            color: primaryColor,
+                            fontWeight: FontWeight.w900,
+                            height: 0,
+                            fontSize: 35)),
+                    ResponsiveText('Developer',
+                        textAlign: TextAlign.start,
+                        style: GoogleFonts.heebo(
+                            color: darkColor,
+                            fontWeight: FontWeight.w900,
+                            height: 0,
+                            fontSize: 35)),
+                  ],
+                )
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 18.0),
-              child: ResponsiveText(
-                  "I'm passionate about building high-quality, user-friendly mobile apps. I have a deep understanding of the Flutter framework and its capabilities, and I'm always looking for new ways to use it to create innovative and engaging apps.",
-                  textAlign: TextAlign.center,
-                  maxLine: 4,
-                  style: GoogleFonts.heebo(
-                    color: darkColor,
+          ),
+          Container(
+            color: Colors.white,
+            padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 18.0),
+            child: ResponsiveText(
+                "I'm passionate about building high-quality, user-friendly mobile apps. I have a deep understanding of the Flutter framework and its capabilities, and I'm always looking for new ways to use it to create innovative and engaging apps.",
+                textAlign: TextAlign.center,
+                maxLine: 4,
+                style: GoogleFonts.heebo(
+                  color: darkColor,
+                  fontSize: 16,
+                )),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: ElevatedButton(
+              style: TextButton.styleFrom(
+                  backgroundColor: primaryColor,
+                  padding: const EdgeInsets.all(24),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0))
+              ),
+              onPressed: () => launchUrl(Uri.parse(
+                  'https://drive.google.com/file/d/1g36-ldsqOepiULx3nc-I42Jzf2ToIROo/view?usp=sharing')),
+              child: ResponsiveText('Download CV',
+                  style: GoogleFonts.inter(
                     fontSize: 16,
+                    color: Colors.white,
                   )),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: ElevatedButton(
-                style: TextButton.styleFrom(
-                    backgroundColor: primaryColor,
-                    padding: EdgeInsets.all(24),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0))
-                ),
-                onPressed: () => launchUrl(Uri.parse(
-                    'https://drive.google.com/file/d/1g36-ldsqOepiULx3nc-I42Jzf2ToIROo/view?usp=sharing')),
-                child: ResponsiveText('Download CV',
-                    style: GoogleFonts.inter(
-                      fontSize: 16,
-                      color: Colors.white,
-                    )),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            )
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 20,
+          )
+        ],
       ),
       web: Container(
         padding: const EdgeInsets.only(top: 10,left: 40,right: 40,bottom: 100),
@@ -183,7 +179,7 @@ class IntroWidget extends StatelessWidget {
                      child: ElevatedButton(
                        style: TextButton.styleFrom(
                          backgroundColor: primaryColor,
-                         padding: EdgeInsets.all(24),
+                         padding: const EdgeInsets.all(24),
                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0))
                        ),
                        onPressed: () => launchUrl(Uri.parse(
@@ -219,7 +215,7 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 380,
       width: 380,
       child: Stack(
@@ -240,14 +236,14 @@ class ImageWidget extends StatelessWidget {
                     height: 290,
                     width: 1,
                     color: Colors.black,
-                    margin: EdgeInsets.only(left: 8.0),
+                    margin: const EdgeInsets.only(left: 8.0),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     height: 290,
                     width: 1,
                     color: Colors.black,
-                    margin: EdgeInsets.only(right: 8.0),
+                    margin: const EdgeInsets.only(right: 8.0),
 
                   ),
                 ],
