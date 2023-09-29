@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../core/constants.dart';
 import '../../../../core/responsive.dart';
+import '../../common_widgets/common_widgets.dart';
 
 
 
@@ -78,24 +79,15 @@ class IntroWidget extends StatelessWidget {
                   fontSize: 16,
                 )),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: ElevatedButton(
-              style: TextButton.styleFrom(
-                  backgroundColor: primaryColor,
-                  padding: const EdgeInsets.all(24),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0))
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: CommonButtonWidget(
+                buttonText: ButtonStringConstants.downloadCv,
+                onTap: () =>
+                    launchUrl(Uri.parse(WebUrlsStringConstants.cvWebUrl)),
               ),
-              onPressed: () => launchUrl(Uri.parse(
-                  'https://drive.google.com/file/d/1g36-ldsqOepiULx3nc-I42Jzf2ToIROo/view?usp=sharing')),
-              child: ResponsiveText('Download CV',
-                  style: GoogleFonts.inter(
-                    fontSize: 16,
-                    color: Colors.white,
-                  )),
             ),
-          ),
-          const SizedBox(
+            const SizedBox(
             height: 20,
           )
         ],
@@ -209,6 +201,7 @@ class IntroWidget extends StatelessWidget {
     );
   }
 }
+
 
 class ImageWidget extends StatelessWidget {
   const ImageWidget({

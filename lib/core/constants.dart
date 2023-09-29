@@ -16,3 +16,12 @@ class StringConstants{
   static const String platforms="Platforms";
   static const String developmentTools="Development-Tools";
 }
+
+class ButtonStringConstants{
+  static const String downloadCv="Download CV";
+
+}
+
+class WebUrlsStringConstants{
+  static const String cvWebUrl="https://drive.google.com/file/d/1g36-ldsqOepiULx3nc-I42Jzf2ToIROo/view?usp=sharing";
+}

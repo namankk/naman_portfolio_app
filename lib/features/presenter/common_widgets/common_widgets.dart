@@ -30,6 +30,7 @@ class HeadingWidget extends StatelessWidget {
     );
   }
 }
+
 class WithBackgroundWidget extends StatelessWidget {
   final Widget child;
 
@@ -39,6 +40,34 @@ class WithBackgroundWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [SvgPicture.asset("assets/icons/background.svg"), child],
+    );
+  }
+}
+
+class CommonButtonWidget extends StatelessWidget {
+  final Function onTap;
+  final String buttonText;
+
+  const CommonButtonWidget({
+    super.key,
+    required this.onTap,
+    required this.buttonText,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: TextButton.styleFrom(
+          backgroundColor: primaryColor,
+          padding: const EdgeInsets.all(24),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.0))),
+      onPressed: () => onTap,
+      child: ResponsiveText(buttonText,
+          style: GoogleFonts.inter(
+            fontSize: 16,
+            color: Colors.white,
+          )),
     );
   }
 }
