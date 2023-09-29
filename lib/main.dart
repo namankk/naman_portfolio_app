@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:naman_portfolio_app/core/constants.dart';
 
-import 'features/presenter/home/home_screen.dart';
+import 'features/presenter/screens/home/home_screen.dart';
 
 void main() {
   runApp(const MyApp());

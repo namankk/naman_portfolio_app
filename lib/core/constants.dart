@@ -10,3 +10,9 @@ const gradient2Color = Color(0xFFf5efef);
 const white = Colors.white;
 
 const defaultPadding = 20.0;
+
+class StringConstants{
+  static const String frontEnd="Front-end";
+  static const String platforms="Platforms";
+  static const String developmentTools="Development-Tools";
+}
