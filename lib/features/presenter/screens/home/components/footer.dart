@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../connect_with_me/connect_with_me.dart';
+import '../../connect_with_me/components/connect_with_me.dart';
 
 
 class FooterWidget extends StatelessWidget {

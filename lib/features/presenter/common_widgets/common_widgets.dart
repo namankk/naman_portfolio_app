@@ -14,8 +14,8 @@ class HeadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Wrap(
+      alignment: WrapAlignment.center,
       children: [
         ResponsiveText(firstWord,style: GoogleFonts.poppins(
           fontSize: 48,
