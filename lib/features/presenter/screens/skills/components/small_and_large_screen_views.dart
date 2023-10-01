@@ -27,29 +27,21 @@ class LargeScreenViewWidget extends StatelessWidget {
         Expanded(
             child: Column(
               children: [
-                ConstrainedBox(
-                  constraints: BoxConstraints(
-                      minHeight:
-                      MediaQuery.sizeOf(context).width /
-                          100 *
-                          30),
-                  child: Expanded(
-                    child: SkillHeadingAndGridWidget(
-                        heading: StringConstants.platforms,
-                        listOfSkills: listOfPlatformsSkills),
-                  ),
+                SizedBox(
+                  height:  MediaQuery.sizeOf(context).width /
+                      100 *
+                      30,
+                  child: SkillHeadingAndGridWidget(
+                      heading: StringConstants.platforms,
+                      listOfSkills: listOfPlatformsSkills),
                 ),
-                ConstrainedBox(
-                  constraints: BoxConstraints(
-                      minHeight:
-                      MediaQuery.sizeOf(context).width /
-                          100 *
-                          50),
-                  child: Expanded(
-                    child: SkillHeadingAndGridWidget(
-                        heading: StringConstants.developmentTools,
-                        listOfSkills: listOfDeveloperSkills),
-                  ),
+                SizedBox(
+                  height:  MediaQuery.sizeOf(context).width /
+                      100 *
+                      50,
+                  child: SkillHeadingAndGridWidget(
+                      heading: StringConstants.developmentTools,
+                      listOfSkills: listOfDeveloperSkills),
                 ),
               ],
             )),
