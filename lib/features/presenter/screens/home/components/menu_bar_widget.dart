@@ -6,6 +6,7 @@ import 'package:naman_portfolio_app/features/presenter/screens/about_me/about_me
 import '../../../../../core/constants.dart';
 import '../../../../../core/responsive.dart';
 import '../../../../data/model/drawer_menu_model.dart';
+import '../../connect_with_me/connect_with_me_screen.dart';
 import '../../skills/skills_screen.dart';
 
 class MenuBarWidget extends StatelessWidget {
@@ -40,7 +41,7 @@ class MenuBarWidget extends StatelessWidget {
                   onPressed: () {
                     //TODO Change Navigation
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const AboutMe()));
+                        builder: (context) => drawerMenu.isSelected?const ConnectWithMeScreen():const AboutMe()));
                   },
                   child: ResponsiveText(drawerMenu.title,
                       style: GoogleFonts.inter(
