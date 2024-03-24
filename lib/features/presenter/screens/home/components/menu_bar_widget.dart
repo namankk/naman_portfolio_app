@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naman_portfolio_app/features/presenter/screens/about_me/about_me.dart';
+import 'package:naman_portfolio_app/core/navigation.dart';
 
 import '../../../../../core/constants.dart';
 import '../../../../../core/responsive.dart';
 import '../../../../data/model/drawer_menu_model.dart';
-import '../../connect_with_me/connect_with_me_screen.dart';
-import '../../skills/skills_screen.dart';
 
 class MenuBarWidget extends StatelessWidget {
   const MenuBarWidget({super.key});
@@ -25,9 +23,8 @@ class MenuBarWidget extends StatelessWidget {
                         vertical: 15, horizontal: 22),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0))),
-                onPressed: () =>Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const SkillsScreen())
-                    /*launchUrl(Uri.parse(drawerMenu.redirectionLink)*/),
+                onPressed: () =>
+                    navigateTo(context, drawerMenu.redirectionLink),
                 child: ResponsiveText(drawerMenu.title,
                     style: GoogleFonts.inter(
                       fontSize: 16,
@@ -39,9 +36,7 @@ class MenuBarWidget extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 21.0),
                 child: TextButton(
                   onPressed: () {
-                    //TODO Change Navigation
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => drawerMenu.isSelected?const ConnectWithMeScreen():const AboutMe()));
+                    navigateTo(context, drawerMenu.redirectionLink);
                   },
                   child: ResponsiveText(drawerMenu.title,
                       style: GoogleFonts.inter(
