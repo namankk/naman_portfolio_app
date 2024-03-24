@@ -11,17 +11,31 @@ const white = Colors.white;
 
 const defaultPadding = 20.0;
 
-class StringConstants{
-  static const String frontEnd="Front-end";
-  static const String platforms="Platforms";
-  static const String developmentTools="Development-Tools";
+class StringConstants {
+  static const String frontEnd = "Front-end";
+  static const String platforms = "Platforms";
+  static const String developmentTools = "Development-Tools";
 }
 
-class ButtonStringConstants{
-  static const String downloadCv="Download CV";
-
+class ButtonStringConstants {
+  static const String downloadCv = "Download CV";
 }
 
-class WebUrlsStringConstants{
-  static const String cvWebUrl="https://drive.google.com/file/d/1g36-ldsqOepiULx3nc-I42Jzf2ToIROo/view?usp=sharing";
+class WebUrlsStringConstants {
+  static const String cvWebUrl =
+      "https://drive.google.com/file/d/1g36-ldsqOepiULx3nc-I42Jzf2ToIROo/view?usp=sharing";
+}
+
+class ClassNameConstants {
+  static const String home = "Home";
+  static const String about = "About";
+  static const String skills = "Skills";
+  static const String contactMe = "Contact Me";
+}
+
+class ClassRedirectionConstants {
+  static const String home = "Home";
+  static const String about = "About";
+  static const String skills = "Skills";
+  static const String contactMe = "Contact Me";
 }

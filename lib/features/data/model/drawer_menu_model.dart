@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:naman_portfolio_app/core/constants.dart';
 
 class DrawerMenuModel {
   final String _title;
@@ -23,12 +24,12 @@ class DrawerMenuModel {
 }
 
 List<DrawerMenuModel> listOfDrawerMenu = [
-  DrawerMenuModel("Home", true, "", Icons.home),
-  DrawerMenuModel("About", false, "", Icons.info_outline),
-  DrawerMenuModel("Skills", false, "", Icons.assessment_outlined),
-  DrawerMenuModel(
-      "Contact Me",
-      false,
-      "https://drive.google.com/file/d/1g36-ldsqOepiULx3nc-I42Jzf2ToIROo/view?usp=sharing",
-      Icons.phone),
+  DrawerMenuModel(ClassNameConstants.home, true, ClassRedirectionConstants.home,
+      Icons.home),
+  DrawerMenuModel(ClassNameConstants.about, false,
+      ClassRedirectionConstants.about, Icons.info_outline),
+  DrawerMenuModel(ClassNameConstants.skills, false,
+      ClassRedirectionConstants.skills, Icons.assessment_outlined),
+  DrawerMenuModel(ClassNameConstants.contactMe, false,
+      ClassRedirectionConstants.contactMe, Icons.phone),
 ];
