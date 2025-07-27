@@ -58,14 +58,6 @@ class MenuBarWidget extends StatelessWidget {
             flex: 1,
           ),
           SvgPicture.asset("assets/icons/logo.svg"),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0, left: 8.0),
-            child: ResponsiveText('Naman',
-                style: GoogleFonts.inter(
-                  fontSize: 21,
-                  color: Colors.black,
-                )),
-          ),
           const Spacer(flex: 4),
           Row(children: menuBarWidgets),
           const Spacer(
